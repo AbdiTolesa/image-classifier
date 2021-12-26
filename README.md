@@ -31,13 +31,13 @@ best_estimator.hyperparameters()
 
 This gives the following output:
 
-2021-12-25 08:31:18 Starting - Preparing the instances for training
+2021-12-25 08:31:18 Starting - Preparing the instances for training  
 2021-12-25 08:31:18 Downloading - Downloading input data
 2021-12-25 08:31:18 Training - Training image download completed. Training in progress.
 2021-12-25 08:31:18 Uploading - Uploading generated training model
 2021-12-25 08:31:18 Completed - Training job completed
-{'_tuning_objective_metric': '"average test loss"',
- 'batch-size': '"256"',
+{'_tuning_objective_metric': '"average test loss"',  
+ 'batch-size': '"256"',  
  'epochs': '4',
  'lr': '0.00390315210654023',
  'sagemaker_container_log_level': '20',
