@@ -8,8 +8,7 @@ Download the starter files.
 Download/Make the dataset available. 
 
 ## Dataset
-
-The dataset used in this project is brought from the famous [dogs-vs-cats competition](https://www.kaggle.com/c/dogs-vs-cats).
+The dataset used in this project is brought from the famous [dogs-vs-cats competition](https://www.kaggle.com/c/dogs-vs-cats). Since the dataset doesn't categorize the images into categories based on the image content, I have written a script so that there would be two directories (one for dogs and another for cats). Once that is done, a portion of the training dataset was moved to a validation dataset.
 
 ### Access
 Upload the data to an S3 bucket through the AWS Gateway so that SageMaker has access to the data. 
@@ -55,15 +54,7 @@ The best hyperparameters are: {'epochs': 4, 'batch-size': 256, 'lr': 0.003903152
 Model debugging and profiling in sagemaker is achieved in sagemaker by defining the rules and profiles in the script defining the PyTorch estimator. The respective hooks for the training and testing phases are defined in the train_model.py script.
 
 ### Results
-**TODO**: What are the results/insights did you get by profiling/debugging your model?
-
-**TODO** Remember to provide the profiler html/pdf file in your submission.
-
+By enabling the SageMaker Debugger and Profiler, I was able to see different debugging information while the training job was running and the resource consumption data like CPU and GPU usage etc. 
 
 ## Model Deployment
-**TODO**: Give an overview of the deployed model and instructions on how to query the endpoint with a sample input.
-
-**TODO** Remember to provide a screenshot of the deployed active endpoint in Sagemaker.
-
-## Standout Suggestions
-**TODO (Optional):** This is where you can provide information about any standout suggestions that you have attempted.
+The deployed model can be queried by creating a Predictor object by specifying the endpointname ("imageclassifier") as a parameter and the calling the predict() method on it providing a data (sample image). The image has to be preprocessed a bit to be consumed by the predictor.
