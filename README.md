@@ -29,26 +29,26 @@ best_estimator = tuner.best_estimator()
 #Get the hyperparameters of the best trained model
 best_estimator.hyperparameters()
 
-This gives the following output:
+This gave the following output:
 
 2021-12-25 08:31:18 Starting - Preparing the instances for training  
-2021-12-25 08:31:18 Downloading - Downloading input data
-2021-12-25 08:31:18 Training - Training image download completed. Training in progress.
-2021-12-25 08:31:18 Uploading - Uploading generated training model
-2021-12-25 08:31:18 Completed - Training job completed
+2021-12-25 08:31:18 Downloading - Downloading input data  
+2021-12-25 08:31:18 Training - Training image download completed. Training in progress.  
+2021-12-25 08:31:18 Uploading - Uploading generated training model  
+2021-12-25 08:31:18 Completed - Training job completed  
 {'_tuning_objective_metric': '"average test loss"',  
  'batch-size': '"256"',  
- 'epochs': '4',
- 'lr': '0.00390315210654023',
- 'sagemaker_container_log_level': '20',
- 'sagemaker_estimator_class_name': '"PyTorch"',
- 'sagemaker_estimator_module': '"sagemaker.pytorch.estimator"',
- 'sagemaker_job_name': '"pytorch-training-2021-12-25-08-03-55-769"',
- 'sagemaker_program': '"train_model_.py"',
- 'sagemaker_region': '"us-east-1"',
- 'sagemaker_submit_directory': '"s3://sagemaker-us-east-1-807116804612/pytorch-training-2021-12-25-08-03-55-769/source/sourcedir.tar.gz"'}
+ 'epochs': '4',  
+ 'lr': '0.00390315210654023',  
+ 'sagemaker_container_log_level': '20',  
+ 'sagemaker_estimator_class_name': '"PyTorch"',  
+ 'sagemaker_estimator_module': '"sagemaker.pytorch.estimator"',  
+ 'sagemaker_job_name': '"pytorch-training-2021-12-25-08-03-55-769"',  
+ 'sagemaker_program': '"train_model_.py"',  
+ 'sagemaker_region': '"us-east-1"',  
+ 'sagemaker_submit_directory': '"s3://sagemaker-us-east-1-807116804612/pytorch-training-2021-12-25-08-03-55-769/source/sourcedir.tar.gz"'}  
 
-The best hyperparameters are: {'epochs': 4, 'batch-size': 256, 'lr': 0.00390315210654023}
+The best hyperparameters are: {'epochs': 4, 'batch-size': 256, 'lr': 0.00390315210654023}  
  
 ## Debugging and Profiling
 Model debugging and profiling in sagemaker is achieved in sagemaker by defining the rules and profiles in the script defining the PyTorch estimator. The respective hooks for the training and testing phases are defined in the train_model.py script.
