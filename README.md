@@ -58,3 +58,7 @@ By enabling the SageMaker Debugger and Profiler, I was able to see different deb
 
 ## Model Deployment
 The deployed model can be queried by creating a Predictor object by specifying the endpointname ("imageclassifier") as a parameter and the calling the predict() method on it providing a data (sample image). The image has to be preprocessed a bit to be consumed by the predictor.
+
+Screenshot of the endpoint in service.
+![image](https://user-images.githubusercontent.com/41271840/147416678-b8a0452a-19d4-46d5-b591-9086aff81814.png)
+
