@@ -3,9 +3,9 @@
 Use AWS Sagemaker to train a pretrained model that can perform image classification by using the Sagemaker profiling, debugger, hyperparameter tuning and other good ML engineering practices. This can be done on either the provided dog breed classication data set or one of your choice.
 
 ## Project Set Up and Installation
-Enter AWS through the gateway in the course and open SageMaker Studio. 
-Download the starter files.
-Download/Make the dataset available. 
+Explanation of the different files:
+train_model.py - a python module that has the model creation, training and validation functionalities.
+train_and_deploy.ipynb - Contains different scripts used for hyperparameter tuning, PyTorch estimator creation and deployment, model inference.
 
 ## Dataset
 The dataset used in this project is brought from the famous [dogs-vs-cats competition](https://www.kaggle.com/c/dogs-vs-cats). Since the dataset doesn't categorize the images into categories based on the image content, I have written a script so that there would be two directories (one for dogs and another for cats). Once that is done, a portion of the training dataset was moved to a validation dataset.
@@ -57,8 +57,8 @@ Model debugging and profiling in sagemaker is achieved in sagemaker by defining 
 By enabling the SageMaker Debugger and Profiler, I was able to see different debugging information while the training job was running and the resource consumption data like CPU and GPU usage etc. 
 
 ## Model Deployment
-The deployed model can be queried by creating a Predictor object by specifying the endpointname ("imageclassifier") as a parameter and the calling the predict() method on it providing a data (sample image). The image has to be preprocessed a bit to be consumed by the predictor.
+The deployed model can be queried by creating a Predictor object by specifying the endpointname as a parameter and the calling the predict() method on it providing a data (sample image). The image has to be preprocessed and transformed by the create_data_loader() function to be consumed by the predictor.
 
 Screenshot of the endpoint in service.
-![image](https://user-images.githubusercontent.com/41271840/147416678-b8a0452a-19d4-46d5-b591-9086aff81814.png)
+![image](https://user-images.githubusercontent.com/41271840/147610383-2aa0e16a-c5ca-4d4d-ba13-f1785569780c.png)
 
